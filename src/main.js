@@ -12,7 +12,7 @@ const ulEl = document.querySelector('ul')
 async function fetchMovie(keyword) {
   const payload = {keyword}
   const res = await axios.get('/.netlify/functions/getMovieData', {params:payload});
-  const data = res.json();
+  const data = res.body
   return data;
 }
 
