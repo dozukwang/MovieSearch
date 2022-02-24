@@ -1,6 +1,6 @@
 import './scss/main.scss'
 import axios from 'axios'
-import { activeControl } from './functions/liClickCheck'
+import { activeControl } from '../functions/liClickCheck'
 
 const keyword = document.querySelector('.keyword')
 const doSearch = document.querySelector('.searchBtn')
