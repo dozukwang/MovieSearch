@@ -1,5 +1,6 @@
 import './scss/main.scss'
 import { activeControl } from './utils/liClickCheck'
+import { fetchMovie } from './utils/getMovieData'
 
 const keyword = document.querySelector('.keyword')
 const doSearch = document.querySelector('.searchBtn')
@@ -7,12 +8,7 @@ const posterImage = document.querySelector('.poster')
 const movieTitle = document.querySelector('.title')
 const ulEl = document.querySelector('ul')
 
-const url = `https://www.omdbapi.com?apikey=${process.env.API_KEY}&s=$`
-async function fetchMovie(title) {
-    const res = await fetch(`${url}${title}`);
-    const data = res.json();
-    return data;
-}
+
 
 // 영화 타이틀 검색
 doSearch.addEventListener('click', async event => {
