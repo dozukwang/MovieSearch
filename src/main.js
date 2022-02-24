@@ -11,9 +11,13 @@ const ulEl = document.querySelector('ul')
 
 async function fetchMovie(keyword) {
   const payload = {keyword}
-  const res = await axios.get('/.netlify/functions/getMovieData', {params:payload});
-  const data = res.body
-  return data;
+  try {
+    const res = await axios.get('/.netlify/functions/getMovieData', {params: payload});
+    const data = res.body;
+    return data;
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 // 영화 타이틀 검색
