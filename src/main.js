@@ -13,9 +13,8 @@ async function fetchMovie(keyword) {
   const payload = {keyword}
   try {
     const res = await axios.get('/.netlify/functions/getMovieData', {params: payload});
-    console.log("data", res)
-    // const data = res.body;
-    // return data;
+    const data = res.data
+    return data;
   } catch (e) {
     console.error(e);
   }
