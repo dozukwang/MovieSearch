@@ -9,8 +9,9 @@ const movieTitle = document.querySelector('.title')
 const ulEl = document.querySelector('ul')
 
 
-async function fetchMovie(title) {
-  const res = await axios.get('/.netlify/functions/getMovieData', {params:title});
+async function fetchMovie(keyword) {
+  const payload = {keyword}
+  const res = await axios.get('/.netlify/functions/getMovieData', {params:payload});
   const data = res.json();
   return data;
 }
