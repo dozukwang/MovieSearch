@@ -1,0 +1,14 @@
+# dependencies
+/node_modules
+
+# files
+/dist
+.DS_Store
+README.md
+
+# etc
+.vscode
+.env
+
+# Local Netlify folder
+.netlify

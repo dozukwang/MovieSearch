@@ -1,0 +1,119 @@
+// COMMON
+body, button, div , input{
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+ul, li { 
+  list-style: none;
+  padding: 0;
+  margin: 20px 25px;
+}
+
+// STYLEING
+body{
+  background-color: rgb(86, 78, 255);
+  padding: 40px;
+}
+.wrap {
+  width: 800px;
+  margin: auto;
+  padding: 30px 0;
+  background-color:rgb(255, 254, 253, .95);
+  border-radius: 20px;
+}
+.poster__container {
+  width: 350px;
+  height: 550px;
+  margin: auto;
+  background-color: rgb(156, 162, 171);
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+  border-radius: 10px;
+  overflow: hidden;
+  .poster {
+    justify-content: center;
+    align-items: center;
+  }
+  .poster--status {
+    display: block;
+    font-size: 200px;
+    font-weight: 900;
+    color: rgb(249, 249, 249, .5);
+    width: 200px;
+    margin: auto;
+  }
+}
+.title{
+  margin: 20px 0;
+}
+.info {
+  display: block;
+  font-size: 14px;
+  font-family: Tahoma, sans-serif;
+  font-weight: 600;
+  color: rgb(86, 78, 255, .7);
+  margin-bottom: 15px;
+}
+@function svgIcon($color) {
+  $fill: '%23'+$color;
+  $icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#{$fill}'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z'/%3E%3C/svg%3E";
+  @return url($icon);
+}
+form {
+  .keyword {
+    width: 500px;
+    height: 30px;
+    font-size: 18px;
+    vertical-align: middle;
+    border-radius: 3px;
+    border: 1.5px solid rgb(150, 150, 150);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+    text-align: start;
+    padding-left: 10px;
+    &:focus{
+      outline: 2px solid rgb(86, 78, 255);
+    }
+    &::-webkit-search-cancel-button{
+      position:relative;
+      -webkit-appearance: none;
+      right: 5px;
+      height: 20px;
+      width: 20px;
+      background-image: svgIcon(cbcdd1);
+      background-size: 100%;
+    }
+  }
+  .searchBtn {
+    height: 30px;
+    width: 50px;
+    font-size: 15px;
+    color: rgb(249, 249, 249);
+    border-radius: 6px;
+    background-color: rgb(86, 78, 255);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  }
+}
+.list {
+  position: relative;
+  text-align: start;
+  border: 1px solid rgba(92, 85, 85, 0.5);
+  background-color: #FFF;
+  padding: 5px 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  .index {
+    position: absolute;
+    right: 10px;
+    font-weight: 600;
+  }
+}
+.active{
+  background-color: rgb(86, 78, 255);
+  color: #FFF;
+  box-shadow: rgba(86, 78, 255, .5) 0 0 8px;
+  transition: .4s;
+}
