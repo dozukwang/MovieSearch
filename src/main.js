@@ -1,6 +1,6 @@
 import './scss/main.scss'
-import { activeControl } from './utils/liClickCheck'
-import { fetchMovie } from './utils/getMovieData'
+import axios from 'axios'
+import { activeControl } from './functions/liClickCheck'
 
 const keyword = document.querySelector('.keyword')
 const doSearch = document.querySelector('.searchBtn')
@@ -9,6 +9,11 @@ const movieTitle = document.querySelector('.title')
 const ulEl = document.querySelector('ul')
 
 
+async function fetchMovie(title) {
+  const res = await axios.get('/.netlify/functions/getMovieData', {params:title});
+  const data = res.json();
+  return data;
+}
 
 // 영화 타이틀 검색
 doSearch.addEventListener('click', async event => {
